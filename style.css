@@ -25,7 +25,21 @@ header img {
     height: 50px;
     margin-top: 10px;
 }
-
+.select-container {
+	height: 100px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+#genre {
+	width: 100px;
+	height: 30px;
+	background-color: #1ED760;
+	color: #fff;
+}
+#genre option {
+	text-align: center;
+}
 .cds-container {
     display: flex;
     justify-content: center;

@@ -22,6 +22,27 @@ $(document).ready(function	() {
 			render(results);
 		}
 	});
+	// Scelgo un genere dal menu
+	$('#genre').click(function	() {
+		// attribuisco alla variabile il valore corrispondente al genere
+		var genreSelect = $(this).val();
+		// ciclo i miei album
+		$('.cds-container .cd').each(function	() {
+			// setto una variabile con l'attributo che contiene il genere dei singoli album
+			var genreAlbum = $(this).attr('data-genre').toLowerCase();
+			// Se seleziono all visualizzo tutti gli album
+			if (genreSelect === 'all') {
+				$(this).show(1000);
+			} else {
+				// Altrimentoi visualizzo solo gli album del genere che ho selezionato
+				if (genreSelect === genreAlbum) {
+					$(this).fadeIn(1000);
+				} else {
+					$(this).fadeOut(1000);
+				}
+			}
+		});
+	});
 });
 
 function render (myJsonArray)	{
@@ -32,7 +53,6 @@ function render (myJsonArray)	{
 	for (var i = 0; i < myJsonArray.length; i++) {
 		// Ogni oggetto dell'array verrà letto e inserito nell'Html
 		var html = template(myJsonArray[i]);
-		console.log(html);
 		$('.cds-container').append(html);
 	}
 }
