@@ -32,7 +32,7 @@ $(document).ready(function	() {
 			var genreAlbum = $(this).attr('data-genre').toLowerCase();
 			// Se seleziono all visualizzo tutti gli album
 			if (genreSelect === 'all') {
-				$(this).show(1000);
+				$(this).fadeIn(1000);
 			} else {
 				// Altrimentoi visualizzo solo gli album del genere che ho selezionato
 				if (genreSelect === genreAlbum) {
